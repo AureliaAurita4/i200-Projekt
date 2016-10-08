@@ -10,7 +10,7 @@ public class i200_Project {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("VOCEX - Individual vocal exercise program");
+        JFrame frame = new JFrame("VOCEX - Individual vocal exercise program"); // copied from http://stackoverflow.com/questions/22506331/simple-dropdown-menu-in-java
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
@@ -21,20 +21,54 @@ public class i200_Project {
 
         frame.add(panel);
 
-        JLabel lbl = new JLabel("Select your sex");
-        lbl.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //lbl.setVisible(true); // Not needed
+        JLabel lbl1 = new JLabel("Select your sex"); //valime sugu
+        lbl1.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        panel.add(lbl);
 
-        String[] choices = { "Man", "Woman"};
+        panel.add(lbl1);
 
-        final JComboBox<String> cb = new JComboBox<String>(choices);
+        String[] choices1 = { "Man", "Woman"};
 
-        cb.setMaximumSize(cb.getPreferredSize());
-        cb.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //cb.setVisible(true); // Not needed
-        panel.add(cb);
+        final JComboBox<String> cb1 = new JComboBox<String>(choices1);
+
+        cb1.setMaximumSize(cb1.getPreferredSize());
+        cb1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        panel.add(cb1);
+
+        //JButton btn1 = new JButton("OK");
+        //btn1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        //panel.add(btn1);
+
+        JLabel lbl2 = new JLabel("Select your voice type"); // valime hääletüüpi
+        lbl2.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+        panel.add(lbl2);
+
+        String[] choices2 = { "Soprano", "Bass"};
+
+        final JComboBox<String> cb2 = new JComboBox<String>(choices2);
+
+        cb2.setMaximumSize(cb2.getPreferredSize());
+        cb2.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        panel.add(cb2);
+
+        JLabel lbl3 = new JLabel("Select your voice type"); // valime hääletüüpi
+        lbl3.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
+        panel.add(lbl3);
+
+        String[] choices3 = { "Soprano", "Bass"};
+
+        final JComboBox<String> cb3 = new JComboBox<String>(choices3);
+
+        cb3.setMaximumSize(cb3.getPreferredSize());
+        cb3.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        panel.add(cb3);
 
         JButton btn = new JButton("OK");
         btn.setAlignmentX(Component.CENTER_ALIGNMENT);
