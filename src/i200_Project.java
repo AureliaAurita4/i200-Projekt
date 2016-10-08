@@ -27,7 +27,7 @@ public class i200_Project {
 
         panel.add(lbl1);
 
-        String[] choices1 = { "Man", "Woman"};
+        String[] choices1 = {"Select", "Man", "Woman"}; //javax.swing.JRadioButtonMenuItem
 
         final JComboBox<String> cb1 = new JComboBox<String>(choices1);
 
@@ -36,9 +36,6 @@ public class i200_Project {
 
         panel.add(cb1);
 
-        //JButton btn1 = new JButton("OK");
-        //btn1.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //panel.add(btn1);
 
         JLabel lbl2 = new JLabel("Select your voice type"); // valime hääletüüpi
         lbl2.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -46,14 +43,26 @@ public class i200_Project {
 
         panel.add(lbl2);
 
-        String[] choices2 = { "Soprano", "Bass"};
+        if (cb1.equals("Man")) {
+            String[] choices2 = {"Select", "Tenor", "Baritone", "Bass"};
 
-        final JComboBox<String> cb2 = new JComboBox<String>(choices2);
+            final JComboBox<String> cb2 = new JComboBox<String>(choices2);
 
-        cb2.setMaximumSize(cb2.getPreferredSize());
-        cb2.setAlignmentX(Component.CENTER_ALIGNMENT);
+            cb2.setMaximumSize(cb2.getPreferredSize());
+            cb2.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        panel.add(cb2);
+            panel.add(cb2);
+
+        } else {
+            String[] choices2 = {"Select", "Soprano", "Mezzo-soprano", "Contralto"};
+
+            final JComboBox<String> cb2 = new JComboBox<String>(choices2);
+
+            cb2.setMaximumSize(cb2.getPreferredSize());
+            cb2.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+            panel.add(cb2);
+        }
 
         JLabel lbl3 = new JLabel("Select exercise type"); // valime hääletüüpi
         lbl3.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -61,7 +70,7 @@ public class i200_Project {
 
         panel.add(lbl3);
 
-        String[] choices3 = { "Warm up", "Breathing", "High notes"};
+        String[] choices3 = {"Select", "Warm up", "Breathing", "High notes"};
 
         final JComboBox<String> cb3 = new JComboBox<String>(choices3);
 
