@@ -55,13 +55,13 @@ public class i200_Project {
 
         panel.add(cb2);
 
-        JLabel lbl3 = new JLabel("Select your voice type"); // valime hääletüüpi
+        JLabel lbl3 = new JLabel("Select exercise type"); // valime hääletüüpi
         lbl3.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
         panel.add(lbl3);
 
-        String[] choices3 = { "Soprano", "Bass"};
+        String[] choices3 = { "Warm up", "Breathing", "High notes"};
 
         final JComboBox<String> cb3 = new JComboBox<String>(choices3);
 

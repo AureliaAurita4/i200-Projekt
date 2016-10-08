@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01079bd6-5037-4112-882a-2095f2f12b67" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/i200_Project/i200_Project.class" afterPath="$PROJECT_DIR$/out/production/i200_Project/i200_Project.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/i200_Project.java" afterPath="$PROJECT_DIR$/src/i200_Project.java" />
     </list>
     <ignored path="i200_Project.iws" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="i200_Project.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/i200_Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+            <state relative-caret-position="147">
+              <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -516,8 +514,8 @@
     <entry file="file://$PROJECT_DIR$/src/Scanner_class.java" />
     <entry file="file://$PROJECT_DIR$/src/i200_Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+        <state relative-caret-position="147">
+          <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
