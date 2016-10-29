@@ -1,89 +1,51 @@
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout; 
-import java.awt.Component;
-
-public class i200_Project {
-
-    public static void main(String[] args) {
-
-        JFrame frame = new JFrame("VOCEX - Individual vocal exercise program"); // copied from http://stackoverflow.com/questions/22506331/simple-dropdown-menu-in-java
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
-        frame.setLocation(430, 100);
-
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
-        frame.add(panel);
-
-        JLabel lbl1 = new JLabel("Select your sex"); //valime sugu
-        lbl1.setAlignmentX(Component.CENTER_ALIGNMENT);
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
-        panel.add(lbl1);
+/**
+ * Created by svetlana on 8.10.16.
+ */
+public class i200_Project extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
-        String[] choices1 = {"Select", "Man", "Woman"}; //javax.swing.JRadioButtonMenuItem
+        Pane pane = new Pane();
+        Scene scene = new Scene(pane, 300, 300);
 
-        final JComboBox<String> cb1 = new JComboBox<String>(choices1);
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
-        cb1.setMaximumSize(cb1.getPreferredSize());
-        cb1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        ChoiceBox selection1 = new ChoiceBox(FXCollections.observableArrayList("Man", "Woman"));
+        pane.getChildren().add(selection1);
+        selection1.setLayoutX(100);
 
-        panel.add(cb1);
+        ChoiceBox selection2 = new ChoiceBox(FXCollections.observableArrayList("Tenor", "Baritone", "Bass", "Soprano",
+                "Mezzo-soprano", "Contralto"));
+        pane.getChildren().add(selection2);
+        selection2.setLayoutX(75);
+        selection2.setLayoutY(50);
 
+        ChoiceBox selection3 = new ChoiceBox(FXCollections.observableArrayList("Warm up", "Breathing", "High notes"));
+        pane.getChildren().add(selection3);
+        selection3.setLayoutX(90);
+        selection3.setLayoutY(100);
 
-        JLabel lbl2 = new JLabel("Select your voice type"); // valime hääletüüpi
-        lbl2.setAlignmentX(Component.CENTER_ALIGNMENT);
+        Button btn = new Button("OK");
+        btn.setLayoutX(125);
+        btn.setLayoutY(150);
+        pane.getChildren().add(btn);
 
+        //btn.setOnAction((event) -> {
+        //    public void handle(ActionEvent e) {
+        //        // Siia tegevus, kui nupp on vajutatud.
+        //    }
+        //});
 
-        panel.add(lbl2);
-
-        if (cb1.equals("Man")) {
-            String[] choices2 = {"Select", "Tenor", "Baritone", "Bass"};
-
-            final JComboBox<String> cb2 = new JComboBox<String>(choices2);
-
-            cb2.setMaximumSize(cb2.getPreferredSize());
-            cb2.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-            panel.add(cb2);
-
-        } else {
-            String[] choices2 = {"Select", "Soprano", "Mezzo-soprano", "Contralto"};
-
-            final JComboBox<String> cb2 = new JComboBox<String>(choices2);
-
-            cb2.setMaximumSize(cb2.getPreferredSize());
-            cb2.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-            panel.add(cb2);
-        }
-
-        JLabel lbl3 = new JLabel("Select exercise type"); // valime hääletüüpi
-        lbl3.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-
-        panel.add(lbl3);
-
-        String[] choices3 = {"Select", "Warm up", "Breathing", "High notes"};
-
-        final JComboBox<String> cb3 = new JComboBox<String>(choices3);
-
-        cb3.setMaximumSize(cb3.getPreferredSize());
-        cb3.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        panel.add(cb3);
-
-        JButton btn = new JButton("OK");
-        btn.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panel.add(btn);
-
-        frame.setVisible(true);
 
     }
 }
