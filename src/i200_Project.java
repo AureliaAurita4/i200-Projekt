@@ -24,10 +24,9 @@ public class i200_Project extends Application {
         pane.getChildren().add(selection1);
         selection1.setLayoutX(100);
 
-        ChoiceBox selection2 = new ChoiceBox(FXCollections.observableArrayList("Tenor", "Baritone", "Bass", "Soprano",
-                "Mezzo-soprano", "Contralto"));
+        ChoiceBox selection2 = new ChoiceBox(FXCollections.observableArrayList());
         pane.getChildren().add(selection2);
-        selection2.setLayoutX(75);
+        selection2.setLayoutX(100);
         selection2.setLayoutY(50);
 
         ChoiceBox selection3 = new ChoiceBox(FXCollections.observableArrayList("Warm up", "Breathing", "High notes"));
@@ -40,11 +39,26 @@ public class i200_Project extends Application {
         btn.setLayoutY(150);
         pane.getChildren().add(btn);
 
-        //btn.setOnAction((event) -> {
-        //    public void handle(ActionEvent e) {
-        //        // Siia tegevus, kui nupp on vajutatud.
-        //    }
-        //});
+        selection1.setOnAction(event -> {
+            System.out.println(selection1.getValue());
+
+            if (selection1.getValue().equals("Man")) {
+                selection2.getItems().add("Tenor");
+                selection2.getItems().add("Baritone");
+                selection2.getItems().add("Bass");
+
+            } else {
+                selection2.getItems().add("Soprano");
+                selection2.getItems().add("Mezzo-soprano");
+                selection2.getItems().add("Contralto");
+            }
+        });
+
+        btn.setOnAction((event) -> {
+            
+
+
+        });
 
 
     }
