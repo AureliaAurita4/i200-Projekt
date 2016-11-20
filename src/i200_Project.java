@@ -4,11 +4,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.net.URL;
+import java.io.File;
+import java.util.ArrayList;
 
 
 /**
@@ -31,7 +30,7 @@ public class i200_Project extends Application {
     }
 
     private void selectFiles() {
-        String asukoht = "";
+
 
 
     }
@@ -95,5 +94,22 @@ public class i200_Project extends Application {
 
         });
     }
+
+    class Sound {
+
+        String failiAsukoht;
+        ArrayList<File> playList;
+
+//        public ArrayList makePlayList(){
+//
+//            if (selection2.equals("Soprano") && selection3.equals("Warm up")) {
+//                failiAsukoht.equals("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3");
+//            }
+//
+//            return playList;
+//        }
+    }
 }
+
+
 
