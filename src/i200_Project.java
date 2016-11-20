@@ -27,6 +27,7 @@ public class i200_Project extends Application {
     private void playFiles() {
 
 
+
     }
 
     private void selectFiles() {
@@ -64,8 +65,8 @@ public class i200_Project extends Application {
         btn.setLayoutY(150);
         pane.getChildren().add(btn);
 
-//        selection1.setOnAction(event -> {
-//            System.out.println(selection1.getValue());
+        selection1.setOnAction(event -> {
+            System.out.println(selection1.getValue());
 //
 //            if (selection1.getValue().equals("Man")) {
 //                selection2.getItems().add("Tenor");
@@ -77,7 +78,7 @@ public class i200_Project extends Application {
 //                selection2.getItems().add("Mezzo-soprano");
 //                selection2.getItems().add("Contralto");
 //            }
-//        });
+         });
 //
 //        selection2.setOnAction(event -> {
 //            System.out.println(selection2.getValue());
