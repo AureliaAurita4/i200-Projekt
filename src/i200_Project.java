@@ -3,12 +3,12 @@ import javafx.collections.FXCollections;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
+import java.net.URL;
 
 
 /**
@@ -18,6 +18,25 @@ public class i200_Project extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        openInterface(primaryStage);
+        selectFiles();
+        playFiles();
+
+
+    }
+
+    private void playFiles() {
+
+
+    }
+
+    private void selectFiles() {
+        String asukoht = "";
+
+
+    }
+
+    private void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
         Scene scene = new Scene(pane, 300, 300);
 
@@ -72,16 +91,9 @@ public class i200_Project extends Application {
 
         btn.setOnAction((event) -> {
 
-            FileChooser fileChooser = new FileChooser();
-            File file = fileChooser.showOpenDialog(primaryStage);
-            //fileChooser.setTitle("Pealkiri");
-
             primaryStage.hide();
 
-
-
         });
-
-
     }
 }
+
