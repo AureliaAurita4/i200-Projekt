@@ -57,7 +57,7 @@ public class Interface {
         btn.setOnAction((event) -> {
 
             primaryStage.hide();
-            Playlist.makePlaylist();
+            Playlist.makePlaylist(); //Doesn't work correctly! Modify this part!
             System.out.println(Playlist.playList);
 
 
