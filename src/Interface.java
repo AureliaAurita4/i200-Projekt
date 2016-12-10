@@ -12,61 +12,53 @@ public class Interface {
 
     public static void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
-        Scene scene = new Scene(pane, 300, 300);
+        Scene scene = new Scene(pane, 300, 200);
 
         primaryStage.setTitle("VOCEX - individual vocal exercises");
         primaryStage.setScene(scene);
         primaryStage.show();
 
 
+        //add label that says "Please select your sex"
         ChoiceBox selection1 = new ChoiceBox(FXCollections.observableArrayList("Man", "Woman"));
         pane.getChildren().add(selection1);
         selection1.setLayoutX(100);
 
 
-//        ChoiceBox selection2 = new ChoiceBox(FXCollections.observableArrayList());
-//        pane.getChildren().add(selection2);
-//        selection2.setLayoutX(100);
-//        selection2.setLayoutY(50);
+        //add label that says "What type of exercise do you want?"
+        ChoiceBox selection2 = new ChoiceBox(FXCollections.observableArrayList("Warm up", "Breathing", "High notes"));
+        pane.getChildren().add(selection2);
+        selection2.setLayoutX(90);
+        selection2.setLayoutY(50);
 
-        ChoiceBox selection3 = new ChoiceBox(FXCollections.observableArrayList("Warm up", "Breathing", "High notes"));
-        pane.getChildren().add(selection3);
-        selection3.setLayoutX(90);
-        selection3.setLayoutY(100);
-
-        Button btn = new Button("OK");
-        btn.setLayoutX(125);
-        btn.setLayoutY(150);
+        Button btn = new Button("Start singing!");
+        btn.setLayoutX(90);
+        btn.setLayoutY(100);
         pane.getChildren().add(btn);
 
         selection1.setOnAction(event -> {
-            System.out.println(selection1.getValue());
-//
-//            if (selection1.getValue().equals("Man")) {
-//                selection2.getItems().add("Tenor");
-//                selection2.getItems().add("Baritone");
-//                selection2.getItems().add("Bass");
-//
-//            } else if (selection1.getValue().equals("Woman")) {
-//                selection2.getItems().add("Soprano");
-//                selection2.getItems().add("Mezzo-soprano");
-//                selection2.getItems().add("Contralto");
-//            }
-        });
-//
-//        selection2.setOnAction(event -> {
-//            System.out.println(selection2.getValue());
-//        });
 
-        selection3.setOnAction(event -> {
-            System.out.println(selection3.getValue());
+            String sex = (String)selection1.getValue();
+            System.out.println(sex);
+
         });
+
+        selection2.setOnAction(event -> {
+
+            String exerciseType = (String)selection2.getValue();
+            System.out.println(exerciseType);
+        });
+
 
 
         btn.setOnAction((event) -> {
 
+            Playlist.makePlaylist();
+
             primaryStage.hide();
 
         });
+
+
     }
 }
