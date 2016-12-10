@@ -11,13 +11,7 @@ public class i200_Project extends Application {
 
         Interface.openInterface(primaryStage);
         Playlist.makePlaylist();
-        playFiles();
-
-
-    }
-
-    private void playFiles() {
-
+        Player.playFiles(primaryStage);
 
 
     }

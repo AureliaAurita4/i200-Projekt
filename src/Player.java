@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class Player extends Application {
 
-    public void playMedia(Stage primaryStage) {
+    public static void playFiles(Stage primaryStage) {
 
         Group root = new Group();
         Scene scene = new Scene(root, 500, 200);
@@ -38,11 +38,13 @@ public class Player extends Application {
     }
 
     public static void main(String[] args) {
+
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        playMedia(primaryStage);
+        playFiles(primaryStage);
     }
+
 }
