@@ -10,6 +10,9 @@ import javafx.stage.Stage;
  */
 public class Interface {
 
+    public static String sex;
+    public static String exerciseType;
+
     public static void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
         Scene scene = new Scene(pane, 300, 200);
@@ -38,14 +41,14 @@ public class Interface {
 
         selection1.setOnAction(event -> {
 
-            String sex = (String)selection1.getValue();
+            sex = (String)selection1.getValue();
             System.out.println(sex);
 
         });
 
         selection2.setOnAction(event -> {
 
-            String exerciseType = (String)selection2.getValue();
+            exerciseType = (String)selection2.getValue();
             System.out.println(exerciseType);
         });
 
@@ -53,9 +56,11 @@ public class Interface {
 
         btn.setOnAction((event) -> {
 
-            Playlist.makePlaylist();
-
             primaryStage.hide();
+            Playlist.makePlaylist();
+            System.out.println(Playlist.playList);
+
+
 
         });
 
