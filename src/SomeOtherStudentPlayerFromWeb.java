@@ -1,6 +1,7 @@
 /**
  * Created by svetlana on 10.12.16.
  */
+//copied from http://stackoverflow.com/questions/29499261/how-to-pause-resume-a-song-in-javafx
 
 import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
@@ -21,7 +22,7 @@ import javafx.util.Duration;
 import java.text.DecimalFormat;
 
 public class SomeOtherStudentPlayerFromWeb extends Application {
-    //copied from http://stackoverflow.com/questions/29499261/how-to-pause-resume-a-song-in-javafx
+
 
     private MediaPlayer player;
     private final ToggleButton playButton = new ToggleButton("Play");
@@ -49,13 +50,13 @@ public class SomeOtherStudentPlayerFromWeb extends Application {
         root.getChildren().addAll(sliderBox, playPause);
         Scene scene = new Scene(root, 300, 100);
 
-        Media pick = new Media(getClass().getResource("/delete/abc/abc.mp3").toExternalForm());
+        String mp3 = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3";
+        Media pick = new Media(mp3);
         player = new MediaPlayer(pick);
 
         // Play the track and select the playButton
         player.play();
         playButton.setSelected(true);
-
 
 
         player.currentTimeProperty().addListener(new ChangeListener<Duration>() {
@@ -136,14 +137,17 @@ public class SomeOtherStudentPlayerFromWeb extends Application {
         }
 
         public DoubleProperty sliderValueProperty() {
+
             return slider.valueProperty();
         }
 
         public boolean isTheValueChanging() {
+
             return slider.isValueChanging();
         }
     }
     public static void main(String[] args) {
+
         launch(args);
     }
 }
