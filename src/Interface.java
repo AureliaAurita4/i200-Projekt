@@ -10,8 +10,8 @@ import javafx.stage.Stage;
  */
 public class Interface {
 
-    public static String sex;
-    public static String exerciseType;
+    private static String sex;
+    private static String exerciseType;
 
     public static void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
@@ -53,14 +53,11 @@ public class Interface {
         });
 
 
-
         btn.setOnAction((event) -> {
 
             primaryStage.hide();
-            Playlist.makePlaylist(); //Doesn't work correctly! Modify this part!
+            Playlist.makePlaylist(sex, exerciseType);
             System.out.println(Playlist.playList);
-
-
 
         });
 

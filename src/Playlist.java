@@ -5,12 +5,9 @@ import java.util.ArrayList;
  */
 public class Playlist {
 
-    public static String sex;
-    public static String exerciseType;
+    static ArrayList playList = new ArrayList();
 
-    static ArrayList playList;
-
-    public static ArrayList makePlaylist() {
+    public static ArrayList makePlaylist(String sex, String exerciseType) {
 
         if (sex.equals("Woman") && exerciseType.equals("Warm up")) {
             playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3");

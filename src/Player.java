@@ -4,7 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -17,21 +16,17 @@ import javafx.stage.Stage;
 
 public class Player extends Application {
 
-    private MediaPlayer mediaPlayer;
-    private final ToggleButton playButton = new ToggleButton("Play");
-    private final ToggleButton pauseButton = new ToggleButton("Pause");
-    private final ToggleButton stopButton = new ToggleButton("Stop");
-    private final SliderBar progressSlider = new SliderBar();
+    private static MediaPlayer mediaPlayer;
+    private static ToggleButton playButton = new ToggleButton("Play");
+    private static ToggleButton pauseButton = new ToggleButton("Pause");
+    private static ToggleButton stopButton = new ToggleButton("Stop");
 
-
-    public void playFiles(Stage primaryStage) {
+    public static void playFiles(Stage primaryStage) {
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
 
         HBox buttons = new HBox(playButton, pauseButton, stopButton);
-        HBox sliderBox = new HBox(progressSlider);
-        HBox.setHgrow(sliderBox, Priority.ALWAYS);
 
         Scene scene = new Scene(root, 300, 100);
 
@@ -41,7 +36,7 @@ public class Player extends Application {
         mediaPlayer.play();
         playButton.setSelected(true);
 
-        root.getChildren().addAll(sliderBox, buttons);
+        root.getChildren().addAll(buttons);
         primaryStage.setTitle("Media Player");
         primaryStage.setScene(scene);
         root.setStyle("-fx-background-color: ANTIQUEWHITE");
@@ -54,26 +49,26 @@ public class Player extends Application {
             pause();
         });
 
-        pauseButton.setOnAction(e -> {
-            stop();
+        stopButton.setOnAction(e -> {
+            stopp();
         });
 
         primaryStage.show();
     }
 
-    private void pause() {
+    private static void pause() {
         mediaPlayer.pause();
-        playButton.setSelected(true);
+        pauseButton.setSelected(true);
     }
 
-    private void play() {
+    private static void play() {
         mediaPlayer.play();
         playButton.setSelected(true);
     }
 
-    public void stop() {
+    public static void stopp() {
         mediaPlayer.stop();
-        playButton.setSelected(true);
+        stopButton.setSelected(true);
     }
 
     public static void main(String[] args) {

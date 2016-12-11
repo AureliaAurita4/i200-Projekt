@@ -10,13 +10,10 @@ public class i200_Project extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Interface.openInterface(primaryStage); //opens an interface, where to choose sex, exercise type and runs Playlist.makePlaylist() method
-        //new Playlist(playList);
-        //Player.playFiles(primaryStage); //opens mediaPlayer and the lesson begins
+
+        Player.playFiles(primaryStage); //opens mediaPlayer and the lesson begins
 
 
     }
 
 }
-
-
-
