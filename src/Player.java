@@ -9,6 +9,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by svetlana on 18.11.16.
@@ -29,6 +31,8 @@ public class Player extends Application {
         HBox buttons = new HBox(playButton, pauseButton, stopButton);
 
         Scene scene = new Scene(root, 300, 100);
+
+        //makeStringList();
 
         String mp3 = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3";
         Media media = new Media(mp3);
@@ -56,6 +60,19 @@ public class Player extends Application {
         primaryStage.show();
     }
 
+//    public static String makeStringList() {
+//
+//        StringBuilder sb = new StringBuilder();
+//
+//        for (String s : playList) {
+//            sb.append(s);
+//            sb.append("\t");
+//        }
+//
+//        String stringList = ;
+//        return stringList;
+//    }
+
     private static void pause() {
         mediaPlayer.pause();
         pauseButton.setSelected(true);
@@ -66,7 +83,7 @@ public class Player extends Application {
         playButton.setSelected(true);
     }
 
-    public static void stopp() {
+    private static void stopp() {
         mediaPlayer.stop();
         stopButton.setSelected(true);
     }

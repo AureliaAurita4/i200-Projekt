@@ -11,7 +11,7 @@ public class i200_Project extends Application {
 
         Interface.openInterface(primaryStage); //opens an interface, where to choose sex, exercise type and runs Playlist.makePlaylist() method
 
-        Player.playFiles(primaryStage); //opens mediaPlayer and the lesson begins
+        //Player.playFiles(primaryStage); //opens mediaPlayer and the lesson begins
 
 
     }

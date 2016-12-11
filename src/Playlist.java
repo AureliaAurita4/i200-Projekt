@@ -44,6 +44,14 @@ public class Playlist {
             playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3");
         }
 
+
         return playList;
     }
+
+    public static String makeStringList() {
+
+        return "playlist to a String";
+    }
+
+
 }
