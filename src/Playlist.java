@@ -23,6 +23,30 @@ public class Playlist {
             playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3");
         }
 
+        else if (sex.equals("Woman") && exerciseType.equals("Breathing")) {
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3");
+        }
+
+        else if (sex.equals("Man") && exerciseType.equals("Breathing")) {
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3");
+        }
+
+        else if (sex.equals("Woman") && exerciseType.equals("High notes")) {
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3");
+        }
+
+        else if (sex.equals("Man") && exerciseType.equals("High notes")) {
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3");
+            playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3");
+        }
+
         return playList;
     }
 }
