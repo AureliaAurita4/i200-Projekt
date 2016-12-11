@@ -1,19 +1,15 @@
+
 import javafx.application.Application;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
 
 /**
  * Created by svetlana on 18.11.16.
@@ -25,38 +21,59 @@ public class Player extends Application {
     private final ToggleButton playButton = new ToggleButton("Play");
     private final ToggleButton pauseButton = new ToggleButton("Pause");
     private final ToggleButton stopButton = new ToggleButton("Stop");
-    private final ToggleGroup group = new ToggleGroup();
-    private final Label totalDuration = new Label();
-    private final Label currentDuration = new Label();
-    private final Slider timeSlider = new Slider();
+    private final SliderBar progressSlider = new SliderBar();
 
 
     public void playFiles(Stage primaryStage) {
 
         VBox root = new VBox(10);
-        Scene scene = new Scene(root, 300, 100);
-
         root.setAlignment(Pos.CENTER);
-        HBox playPauseStop = new HBox(playButton, pauseButton, stopButton);
-        HBox sliderBox = new HBox(timeSlider, currentDuration, totalDuration);
 
+        HBox buttons = new HBox(playButton, pauseButton, stopButton);
+        HBox sliderBox = new HBox(progressSlider);
         HBox.setHgrow(sliderBox, Priority.ALWAYS);
+
+        Scene scene = new Scene(root, 300, 100);
 
         String mp3 = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3";
         Media media = new Media(mp3);
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
+        playButton.setSelected(true);
 
-        root.getChildren().addAll(sliderBox, playPauseStop);
+        root.getChildren().addAll(sliderBox, buttons);
         primaryStage.setTitle("Media Player");
         primaryStage.setScene(scene);
-        scene.setFill(Color.DARKSALMON);
+        root.setStyle("-fx-background-color: ANTIQUEWHITE");
 
-//        ToggleButton playBack = new ToggleButton("play_pause_stop");
-//        ToggleGroup btnGroup = new ToggleGroup();
-//        ToggleButton play = new ToggleButton("Play")
+        playButton.setOnAction(e -> {
+            play();
+        });
+
+        pauseButton.setOnAction(e -> {
+            pause();
+        });
+
+        pauseButton.setOnAction(e -> {
+            stop();
+        });
 
         primaryStage.show();
+    }
+
+    private void pause() {
+        mediaPlayer.pause();
+        playButton.setSelected(true);
+    }
+
+    private void play() {
+        mediaPlayer.play();
+        playButton.setSelected(true);
+    }
+
+    public void stop() {
+        mediaPlayer.stop();
+        playButton.setSelected(true);
     }
 
     public static void main(String[] args) {
