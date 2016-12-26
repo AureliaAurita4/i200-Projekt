@@ -14,8 +14,7 @@ public class ArrayToString {
         playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/03.MP3");
 
         StringBuilder sb = new StringBuilder();
-        for (String s : playList)
-        {
+        for (String s : playList) {
             sb.append(s);
             sb.append("\t");
         }

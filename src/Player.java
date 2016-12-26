@@ -19,11 +19,11 @@ import java.util.ArrayList;
 public class Player extends Application {
 
     private static MediaPlayer mediaPlayer;
-    private static ToggleButton playButton = new ToggleButton("Play");
-    private static ToggleButton pauseButton = new ToggleButton("Pause");
-    private static ToggleButton stopButton = new ToggleButton("Stop");
+    private ToggleButton playButton = new ToggleButton("Play");
+    private ToggleButton pauseButton = new ToggleButton("Pause");
+    private ToggleButton stopButton = new ToggleButton("Stop");
 
-    public static void playFiles(Stage primaryStage) {
+    public void playFiles(Stage primaryStage) {
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
@@ -73,17 +73,17 @@ public class Player extends Application {
 //        return stringList;
 //    }
 
-    private static void pause() {
+    private void pause() {
         mediaPlayer.pause();
         pauseButton.setSelected(true);
     }
 
-    private static void play() {
+    private void play() {
         mediaPlayer.play();
         playButton.setSelected(true);
     }
 
-    private static void stopp() {
+    private void stopp() {
         mediaPlayer.stop();
         stopButton.setSelected(true);
     }

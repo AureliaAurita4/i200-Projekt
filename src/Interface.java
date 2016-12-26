@@ -33,7 +33,7 @@ public class Interface {
         selection1.setLayoutX(100);
         selection1.setLayoutY(20);
 
-        //add label that says "What type of exercise do you want?"
+
         Label label2 = new Label("What type of exercise do you want?");
         ChoiceBox selection2 = new ChoiceBox(FXCollections.observableArrayList("Warm up", "Breathing", "High notes"));
         pane.getChildren().add(selection2);
