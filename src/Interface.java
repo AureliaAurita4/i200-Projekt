@@ -7,6 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Created by svetlana on 10.12.16.
@@ -15,6 +16,7 @@ public class Interface {
 
     private static String sex;
     private static String exerciseType;
+    //public static ArrayList playList;
 
     public static void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
@@ -66,10 +68,31 @@ public class Interface {
 
             primaryStage.hide();
             Playlist.makePlaylist(sex, exerciseType);
-            System.out.println(Playlist.playList);
-
+            //ArrayToString.makeStringList(playList);
+            //System.out.println(Playlist.playList);
+            makeStringList(Playlist.playList);
         });
 
 
+
+
+    }
+
+    private static String makeStringList(ArrayList playList) {
+
+        //System.out.println(playList);
+
+        StringBuilder sb = new StringBuilder();
+        for (Object s : playList) {
+            sb.append(s);
+            sb.append("\t");
+        }
+
+        String str = sb.toString();
+
+        System.out.println(str);
+        return str;
     }
 }
+
+//file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3	file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3	file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3

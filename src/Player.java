@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class Player extends Application {
 
-    private static MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer;
     private ToggleButton playButton = new ToggleButton("Play");
     private ToggleButton pauseButton = new ToggleButton("Pause");
     private ToggleButton stopButton = new ToggleButton("Stop");
@@ -59,19 +59,6 @@ public class Player extends Application {
 
         primaryStage.show();
     }
-
-//    public static String makeStringList() {
-//
-//        StringBuilder sb = new StringBuilder();
-//
-//        for (String s : playList) {
-//            sb.append(s);
-//            sb.append("\t");
-//        }
-//
-//        String stringList = ;
-//        return stringList;
-//    }
 
     private void pause() {
         mediaPlayer.pause();

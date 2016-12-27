@@ -5,20 +5,20 @@ import java.util.ArrayList;
  */
 public class ArrayToString {
 
-    public static void main(String[] args) {
+    public static ArrayList playList;
 
-        ArrayList<String> playList = new ArrayList<>();
+    public static String makeStringList(ArrayList playList) {
 
-        playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3");
-        playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/02.MP3");
-        playList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/03.MP3");
+        System.out.println(playList);
 
         StringBuilder sb = new StringBuilder();
-        for (String s : playList) {
+        for (Object s : playList) {
             sb.append(s);
             sb.append("\t");
         }
 
-        System.out.println(sb.toString());
+        String str = sb.toString();
+
+        return str;
     }
 }
