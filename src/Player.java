@@ -18,31 +18,43 @@ import java.util.ArrayList;
 
 public class Player extends Application {
 
-    private MediaPlayer mediaPlayer;
-    private ToggleButton playButton = new ToggleButton("Play");
-    private ToggleButton pauseButton = new ToggleButton("Pause");
-    private ToggleButton stopButton = new ToggleButton("Stop");
+    private static MediaPlayer mediaPlayer;
+    private static ToggleButton playButton = new ToggleButton("Play");
+    private static ToggleButton pauseButton = new ToggleButton("Pause");
+    private static ToggleButton stopButton = new ToggleButton("Stop");
+    private static ToggleButton nextButton = new ToggleButton("Next");
 
-    public String str;
-
-    public void playFiles(Stage primaryStage) {
+    public static void playFiles(Stage primaryStage) {
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
 
-        HBox buttons = new HBox(playButton, pauseButton, stopButton);
+        HBox buttons = new HBox(playButton, pauseButton, stopButton, nextButton);
 
         Scene scene = new Scene(root, 300, 100);
 
-        //makeStringList();
 
-        //singleFile();
+        ArrayList<String> songList = new ArrayList();
 
-        String mp3 = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3";
+        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3"); //144215.0 ms
+        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/02.MP3"); //132712.0 ms
+        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/03.MP3"); //119409.0 ms
+        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3"); //131981.0 ms
+        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3"); //134146.0 ms
+        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3"); //91970.0 ms
+
+        String mp3 = songList.get(2);
         Media media = new Media(mp3);
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
         playButton.setSelected(true);
+
+//        for (int i = 0; i < songList.size(); i++) {
+//            if (mediaPlayer.getCycleDuration() < ) {
+//
+//            }
+//
+//        }
 
         root.getChildren().addAll(buttons);
         primaryStage.setTitle("Media Player");
@@ -61,29 +73,33 @@ public class Player extends Application {
             stopp();
         });
 
+        nextButton.setOnAction(e -> {
+            palyNext();
+
+        });
+
         primaryStage.show();
     }
 
-    private String singleFile(String str) {
 
-
-
-        return null;
-    }
-
-    private void pause() {
+    private static void pause() {
         mediaPlayer.pause();
         pauseButton.setSelected(true);
     }
 
-    private void play() {
+    private static void play() {
         mediaPlayer.play();
         playButton.setSelected(true);
     }
 
-    private void stopp() {
+    private static void stopp() {
         mediaPlayer.stop();
         stopButton.setSelected(true);
+    }
+
+    private static void palyNext() {
+        System.out.println(mediaPlayer.getCycleDuration());
+        nextButton.setSelected(true);
     }
 
     public static void main(String[] args) {

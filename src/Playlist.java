@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class Playlist {
 
-    static ArrayList playList = new ArrayList();
+    public static ArrayList<String> playList = new ArrayList();
 
     public static ArrayList makePlaylist(String sex, String exerciseType) {
 

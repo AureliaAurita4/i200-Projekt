@@ -1,7 +1,6 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 
 
 /**
@@ -12,9 +11,6 @@ public class i200_Project extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Interface.openInterface(primaryStage); //opens an interface, where to choose sex, exercise type and runs Playlist.makePlaylist() method
-
-        //Player.playFiles(primaryStage); //opens mediaPlayer and the lesson begins
-
 
     }
 
