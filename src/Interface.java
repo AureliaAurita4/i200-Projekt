@@ -78,7 +78,7 @@ public class Interface {
 
     }
 
-    private static String makeStringList(ArrayList playList) {
+    public static String makeStringList(ArrayList playList) {
 
         //System.out.println(playList);
 
@@ -90,7 +90,9 @@ public class Interface {
 
         String str = sb.toString();
 
-        System.out.println(str);
+
+
+        System.out.println(str.split("file:"));
         return str;
     }
 }

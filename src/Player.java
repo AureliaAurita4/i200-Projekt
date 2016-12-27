@@ -23,6 +23,8 @@ public class Player extends Application {
     private ToggleButton pauseButton = new ToggleButton("Pause");
     private ToggleButton stopButton = new ToggleButton("Stop");
 
+    public String str;
+
     public void playFiles(Stage primaryStage) {
 
         VBox root = new VBox(10);
@@ -33,6 +35,8 @@ public class Player extends Application {
         Scene scene = new Scene(root, 300, 100);
 
         //makeStringList();
+
+        //singleFile();
 
         String mp3 = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3";
         Media media = new Media(mp3);
@@ -58,6 +62,13 @@ public class Player extends Application {
         });
 
         primaryStage.show();
+    }
+
+    private String singleFile(String str) {
+
+
+
+        return null;
     }
 
     private void pause() {
