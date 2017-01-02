@@ -42,8 +42,12 @@ public class Player extends Application {
         songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3"); //131981.0 ms
         songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3"); //134146.0 ms
         songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3"); //91970.0 ms
+        System.out.println(songList.size());
 
-        String mp3 = songList.get(2);
+
+
+
+        String mp3 = songList.get(0);
         Media media = new Media(mp3);
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
@@ -74,7 +78,7 @@ public class Player extends Application {
         });
 
         nextButton.setOnAction(e -> {
-            palyNext();
+            playNext();
 
         });
 
@@ -97,7 +101,7 @@ public class Player extends Application {
         stopButton.setSelected(true);
     }
 
-    private static void palyNext() {
+    private static void playNext() {
         System.out.println(mediaPlayer.getCycleDuration());
         nextButton.setSelected(true);
     }

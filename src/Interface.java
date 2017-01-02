@@ -17,7 +17,6 @@ public class Interface {
 
     private static String sex;
     private static String exerciseType;
-    //public static ArrayList playList;
 
     public static void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
@@ -75,6 +74,3 @@ public class Interface {
 
     }
 }
-
-//file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3	file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3	file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3
-
