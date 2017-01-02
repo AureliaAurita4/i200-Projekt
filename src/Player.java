@@ -24,7 +24,7 @@ public class Player extends Application {
     private static ToggleButton stopButton = new ToggleButton("Stop");
     private static ToggleButton nextButton = new ToggleButton("Next");
 
-    public static void playFiles(Stage primaryStage) {
+    public static void playFiles(Stage primaryStage, ArrayList songList) {
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
@@ -34,20 +34,20 @@ public class Player extends Application {
         Scene scene = new Scene(root, 300, 100);
 
 
-        ArrayList<String> songList = new ArrayList();
-
-        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3"); //144215.0 ms
-        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/02.MP3"); //132712.0 ms
-        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/03.MP3"); //119409.0 ms
-        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3"); //131981.0 ms
-        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3"); //134146.0 ms
-        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3"); //91970.0 ms
-        System.out.println(songList.size());
-
-
+//        ArrayList<String> songList = new ArrayList();
+//
+//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3"); //144215.0 ms
+//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/02.MP3"); //132712.0 ms
+//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/03.MP3"); //119409.0 ms
+//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3"); //131981.0 ms
+//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3"); //134146.0 ms
+//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3"); //91970.0 ms
+//        System.out.println(songList.size());
 
 
-        String mp3 = songList.get(0);
+
+
+        String mp3 = (String)songList.get(0);
         Media media = new Media(mp3);
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
@@ -112,8 +112,8 @@ public class Player extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        playFiles(primaryStage);
+    public void start(Stage primaryStage, ArrayList songList) throws Exception {
+        playFiles(primaryStage, songList);
     }
 
 }
