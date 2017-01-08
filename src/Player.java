@@ -24,7 +24,7 @@ public class Player extends Application {
     private static ToggleButton stopButton = new ToggleButton("Stop");
     private static ToggleButton nextButton = new ToggleButton("Next");
 
-    public static void playFiles(Stage primaryStage, ArrayList songList) {
+    public static void playFiles(Stage primaryStage) {
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
@@ -33,32 +33,28 @@ public class Player extends Application {
 
         Scene scene = new Scene(root, 300, 100);
 
+        ArrayList<String> songList = new ArrayList();
 
-//        ArrayList<String> songList = new ArrayList();
-//
-//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/01.MP3"); //144215.0 ms
-//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/02.MP3"); //132712.0 ms
-//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/03.MP3"); //119409.0 ms
-//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/04.MP3"); //131981.0 ms
-//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/05.MP3"); //134146.0 ms
-//        songList.add("file:///home/svetlana/Documents/Java/Projects/i200_Project/src/06.MP3"); //91970.0 ms
-//        System.out.println(songList.size());
+        String fileName = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/";
+
+        songList.add(fileName + "01.MP3"); //144215.0 ms
+        songList.add(fileName + "02.MP3"); //132712.0 ms
+        songList.add(fileName + "03.MP3"); //119409.0 ms
+        songList.add(fileName + "04.MP3"); //131981.0 ms
+        songList.add(fileName + "05.MP3"); //134146.0 ms
+        songList.add(fileName + "06.MP3"); //91970.0 ms
+        //System.out.println(songList.size());
 
 
-
-
-        String mp3 = (String)songList.get(0);
+        String mp3 = songList.get(0);
         Media media = new Media(mp3);
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
         playButton.setSelected(true);
 
-//        for (int i = 0; i < songList.size(); i++) {
-//            if (mediaPlayer.getCycleDuration() < ) {
-//
-//            }
-//
-//        }
+
+
+
 
         root.getChildren().addAll(buttons);
         primaryStage.setTitle("Media Player");
@@ -77,10 +73,19 @@ public class Player extends Application {
             stopp();
         });
 
-        nextButton.setOnAction(e -> {
-            playNext();
+//        nextButton.setOnAction(e -> {
 
-        });
+        //        for (int i = 0; i < songList.size(); i++) {
+//            if (mediaPlayer.getCycleDuration() < ) {
+//                 mp3 = songList.get(1);
+//                 media = new Media(mp3);
+//                 mediaPlayer.play();
+//                 playButton.setSelected(true);
+//            }
+//
+//        }
+//
+//        });
 
         primaryStage.show();
     }
@@ -101,10 +106,10 @@ public class Player extends Application {
         stopButton.setSelected(true);
     }
 
-    private static void playNext() {
-        System.out.println(mediaPlayer.getCycleDuration());
-        nextButton.setSelected(true);
-    }
+//    private static void playNext() {
+//        System.out.println(mediaPlayer.getCycleDuration());
+//        nextButton.setSelected(true);
+//    }
 
     public static void main(String[] args) {
 
@@ -112,8 +117,8 @@ public class Player extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage, ArrayList songList) throws Exception {
-        playFiles(primaryStage, songList);
+    public void start(Stage primaryStage) throws Exception {
+        playFiles(primaryStage);
     }
 
 }

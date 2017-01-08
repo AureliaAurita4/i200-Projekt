@@ -69,7 +69,7 @@ public class Interface {
             primaryStage.hide();
             ArrayList songList = Playlist.makePlaylist(sex, exerciseType);
             System.out.println(songList);
-            Player.playFiles(primaryStage, songList);
+            Player.playFiles(primaryStage);
         });
 
     }
