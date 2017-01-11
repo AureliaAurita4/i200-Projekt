@@ -5,10 +5,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by svetlana on 10.12.16.

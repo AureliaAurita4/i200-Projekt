@@ -1,5 +1,4 @@
 
-import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -34,18 +33,6 @@ public class Player {
         HBox buttons = new HBox(playButton, pauseButton, stopButton, nextButton);
 
         Scene scene = new Scene(root, 300, 100);
-
-        //ArrayList<String> songList = new ArrayList();
-
-//        String fileList = "file:///home/svetlana/Documents/Java/Projects/i200_Project/src/";
-//
-//        songList.add(fileList + "01.MP3"); //144215.0 ms
-//        songList.add(fileList + "02.MP3"); //132712.0 ms
-//        songList.add(fileList + "03.MP3"); //119409.0 ms
-//        songList.add(fileList + "04.MP3"); //131981.0 ms
-//        songList.add(fileList + "05.MP3"); //134146.0 ms
-//        songList.add(fileList + "06.MP3"); //91970.0 ms
-        //System.out.println(songList.size());
 
 //        for(int i = 0; i < songList.size(); i++){
 //            String mp3 = (String)songList.get(i);
@@ -113,17 +100,6 @@ public class Player {
 //
 //        currentSong.stop();
 //        nextSong.play();
-//    }
-
-
-//    public static void main(String[] args) {
-//
-//        launch(args);
-//    }
-
-//    @Override
-//    public void start(Stage primaryStage) throws Exception {
-//        playFiles(primaryStage);
 //    }
 
 }
