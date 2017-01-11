@@ -16,9 +16,9 @@ public class Playlist {
             playList.add(fileName + "03.MP3");
 
         } else if (sex.equals("Man") && exerciseType.equals("Warm up")) {
-            playList.add(fileName + "04.MP3");
-            playList.add(fileName + "05.MP3");
-            playList.add(fileName + "06.MP3");
+            playList.add(fileName + "01.MP3");
+            playList.add(fileName + "02.MP3");
+            playList.add(fileName + "03.MP3");
         }
 
         else if (sex.equals("Woman") && exerciseType.equals("Breathing")) {
