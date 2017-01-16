@@ -12,10 +12,10 @@ import java.util.ArrayList;
  */
 public class Interface {
 
-    private static String sex;
-    private static String exerciseType;
+    private String sex;
+    private String exerciseType;
 
-    public static void openInterface(Stage primaryStage) {
+    public void openInterface(Stage primaryStage) {
         Pane pane = new Pane();
         Scene scene = new Scene(pane, 300, 200);
 
@@ -64,9 +64,10 @@ public class Interface {
         btn.setOnAction((event) -> {
 
             primaryStage.hide();
-            ArrayList songList = Playlist.makePlaylist(sex, exerciseType);
+            ArrayList<String> songList = Playlist.makePlaylist(sex, exerciseType);
             System.out.println(songList);
-            Player.playFiles(primaryStage, songList);
+            Player pl = new Player();
+            pl.playFiles(primaryStage, songList);
         });
 
     }

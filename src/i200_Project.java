@@ -10,7 +10,10 @@ public class i200_Project extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Interface.openInterface(primaryStage); //opens an interface, where to choose sex, exercise type and runs Playlist.makePlaylist() method
+
+        Interface inter = new Interface();
+
+        inter.openInterface(primaryStage); //opens an interface, where to choose sex, exercise type and runs Playlist.makePlaylist() method
 
     }
 

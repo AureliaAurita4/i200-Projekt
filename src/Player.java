@@ -19,37 +19,31 @@ import java.util.ArrayList;
 public class Player {
 
     private static MediaPlayer player;
-    //private static MediaView mediaView = new MediaView();
+    private static Media media;
+    private static ArrayList<MediaPlayer> fileList;
+    private static MediaView mediaView = new MediaView();
     private static ToggleButton playButton = new ToggleButton("Play");
     private static ToggleButton pauseButton = new ToggleButton("Pause");
     private static ToggleButton stopButton = new ToggleButton("Stop");
     private static ToggleButton nextButton = new ToggleButton("Next");
 
-    public static void playFiles(Stage primaryStage, ArrayList songList) {
+    public void playFiles(Stage primaryStage, ArrayList<String> songList) {
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.CENTER);
-
         HBox buttons = new HBox(playButton, pauseButton, stopButton, nextButton);
-
         Scene scene = new Scene(root, 300, 100);
+        fileList = new ArrayList();
 
-//        for(int i = 0; i < songList.size(); i++){
-//            String mp3 = (String)songList.get(i);
-//            Media media = new Media(mp3);
-//            songList.add(new MediaPlayer(media));
-//        }
-//
-//        MediaPlayer player = (MediaPlayer)songList.get(0);
-//        mediaView.setMediaPlayer(player);
-//        player.play();
+        for(int i = 0; i < songList.size(); i++){
+            String mp3 = songList.get(i).toString();
+            media = new Media(mp3);
+            fileList.add(new MediaPlayer(media));
+    }
 
-        String mp3 = (String)songList.get(0);
-        Media media = new Media(mp3);
-        player = new MediaPlayer(media);
+        player = fileList.get(0);
+        mediaView.setMediaPlayer(player);
         player.play();
-        playButton.setSelected(true);
-
 
         root.getChildren().addAll(buttons);
         primaryStage.setTitle("Media Player");
@@ -70,7 +64,7 @@ public class Player {
 
         nextButton.setOnAction(e -> {
 
-           // playNext();
+            playNext();
 
         });
 
@@ -80,26 +74,27 @@ public class Player {
 
     private static void pause() {
         player.pause();
-        pauseButton.setSelected(true);
+        pauseButton.setSelected(false);
     }
 
     private static void play() {
         player.play();
-        playButton.setSelected(true);
+        playButton.setSelected(false);
     }
 
     private static void stopp() {
         player.stop();
-        stopButton.setSelected(true);
+        stopButton.setSelected(false);
     }
 
-//    private static void playNext() {
-//        MediaPlayer currentSong = mediaView.getMediaPlayer();
-//        MediaPlayer nextSong = songList.get((songList.indexOf(currentSong) + 1) % songList.size());
-//        mediaView.setMediaPlayer(nextSong);
-//
-//        currentSong.stop();
-//        nextSong.play();
-//    }
+    private static void playNext() {
+        MediaPlayer currentSong = mediaView.getMediaPlayer();
+        MediaPlayer nextSong = fileList.get((fileList.indexOf(currentSong) + 1) % fileList.size());//loop back the list
+        mediaView.setMediaPlayer(nextSong);
+
+        currentSong.stop();
+        player = nextSong;
+        player.play();
+    }
 
 }
