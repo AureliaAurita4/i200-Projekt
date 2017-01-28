@@ -18,14 +18,14 @@ import java.util.ArrayList;
 
 public class Player {
 
-    private static MediaPlayer player;
-    private static Media media;
-    private static ArrayList<MediaPlayer> fileList;
-    private static MediaView mediaView = new MediaView();
-    private static ToggleButton playButton = new ToggleButton("Play");
-    private static ToggleButton pauseButton = new ToggleButton("Pause");
-    private static ToggleButton stopButton = new ToggleButton("Stop");
-    private static ToggleButton nextButton = new ToggleButton("Next");
+    private MediaPlayer player;
+    private Media media;
+    private ArrayList<MediaPlayer> playerList;
+    private MediaView mediaView = new MediaView();
+    private ToggleButton playButton = new ToggleButton("Play");
+    private ToggleButton pauseButton = new ToggleButton("Pause");
+    private ToggleButton stopButton = new ToggleButton("Stop");
+    private ToggleButton nextButton = new ToggleButton("Next");
 
     public void playFiles(Stage primaryStage, ArrayList<String> songList) {
 
@@ -33,15 +33,15 @@ public class Player {
         root.setAlignment(Pos.CENTER);
         HBox buttons = new HBox(playButton, pauseButton, stopButton, nextButton);
         Scene scene = new Scene(root, 300, 100);
-        fileList = new ArrayList();
+        playerList = new ArrayList();
 
         for(int i = 0; i < songList.size(); i++){
             String mp3 = songList.get(i).toString();
             media = new Media(mp3);
-            fileList.add(new MediaPlayer(media));
+            playerList.add(new MediaPlayer(media));
     }
 
-        player = fileList.get(0);
+        player = playerList.get(0);
         mediaView.setMediaPlayer(player);
         player.play();
 
@@ -72,24 +72,24 @@ public class Player {
     }
 
 
-    private static void pause() {
+    private void pause() {
         player.pause();
         pauseButton.setSelected(false);
     }
 
-    private static void play() {
+    private void play() {
         player.play();
         playButton.setSelected(false);
     }
 
-    private static void stopp() {
+    private void stopp() {
         player.stop();
         stopButton.setSelected(false);
     }
 
-    private static void playNext() {
+    private void playNext() {
         MediaPlayer currentSong = mediaView.getMediaPlayer();
-        MediaPlayer nextSong = fileList.get((fileList.indexOf(currentSong) + 1) % fileList.size());//loop back the list
+        MediaPlayer nextSong = playerList.get((playerList.indexOf(currentSong) + 1) % playerList.size());//loop back the list
         mediaView.setMediaPlayer(nextSong);
 
         currentSong.stop();

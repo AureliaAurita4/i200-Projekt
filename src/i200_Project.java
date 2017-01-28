@@ -13,7 +13,7 @@ public class i200_Project extends Application {
 
         Interface inter = new Interface();
 
-        inter.openInterface(primaryStage); //opens an interface, where to choose sex, exercise type and runs Playlist.makePlaylist() method
+        inter.openInterface(primaryStage);
 
     }
 
