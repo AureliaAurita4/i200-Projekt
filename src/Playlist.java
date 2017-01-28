@@ -13,35 +13,36 @@ public class Playlist {
             playList.add(fileName + "01.MP3");
             playList.add(fileName + "02.MP3");
             playList.add(fileName + "03.MP3");
+            playList.add(fileName + "04.MP3");
 
         } else if (sex.equals("Man") && exerciseType.equals("Warm up")) {
             playList.add(fileName + "01.MP3");
             playList.add(fileName + "02.MP3");
             playList.add(fileName + "03.MP3");
+            playList.add(fileName + "04.MP3");
         }
 
         else if (sex.equals("Woman") && exerciseType.equals("Breathing")) {
-            playList.add(fileName + "04.MP3");
             playList.add(fileName + "05.MP3");
             playList.add(fileName + "06.MP3");
+            playList.add(fileName + "07.MP3");
         }
 
         else if (sex.equals("Man") && exerciseType.equals("Breathing")) {
-            playList.add(fileName + "04.MP3");
-            playList.add(fileName + "05.MP3");
-            playList.add(fileName + "06.MP3");
+            playList.add(fileName + "08.MP3");
+            playList.add(fileName + "09.MP3");
         }
 
         else if (sex.equals("Woman") && exerciseType.equals("High notes")) {
-            playList.add(fileName + "04.MP3");
-            playList.add(fileName + "05.MP3");
-            playList.add(fileName + "06.MP3");
+            playList.add(fileName + "10.MP3");
+            playList.add(fileName + "11.MP3");
+            playList.add(fileName + "12.MP3");
+            playList.add(fileName + "13.MP3");
         }
 
         else if (sex.equals("Man") && exerciseType.equals("High notes")) {
-            playList.add(fileName + "04.MP3");
-            playList.add(fileName + "05.MP3");
-            playList.add(fileName + "06.MP3");
+            playList.add(fileName + "10.MP3");
+            playList.add(fileName + "12.MP3");
         }
 
 
