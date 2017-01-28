@@ -42,7 +42,7 @@ public class Interface {
         selection2.setLayoutX(90);
         selection2.setLayoutY(90);
 
-        Button btn = new Button("Start singing!");
+        Button btn = new Button("Start singing");
         btn.setLayoutX(95);
         btn.setLayoutY(150);
         pane.getChildren().add(btn);
